@@ -7,13 +7,19 @@ public class GuessingGame
 		System.out.println("Guess a number between 0 and 10");
 		Scanner scan = new Scanner(System.in);
 		int guess = scan.nextInt();
-		if(guess == number)
+		boolean guessed = false;
+		while(guessed == false)
 		{
-			System.out.println("Your guess was correct!");
-		}
-		else
-		{
-			System.out.println("Your guess was incorrect. The number was " + number);
+			if(guess == number)
+			{
+				System.out.println("You guessed right!");
+				guessed = true;
+			}
+			else
+			{
+				System.out.println("Sorry, your guess was incorrect. Guess again.");
+				guess = scan.nextInt();
+			}
 		}
 	}
 
